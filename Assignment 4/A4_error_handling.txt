@@ -1,0 +1,24 @@
+Handling of errors:
+
+Error 1:    Allocating less space for the msg2 pointer. 
+Stategy:    Allocating enough space for the decoded message is required. This can be done by the  following:
+	        
+	        int *msg2=(int *) malloc(sizeof(int)*MAX_MSG_SIZE);
+        
+        	The maximum message size is given to be 200. using small size would cause program to run out of space and stop.
+
+Error 2 :   Unable to allocate memory and segmentation faults.
+Strategy:   We can check if the memory allocation in check_run_length() function returns a null pointer or not. If the pointer returned is null,
+            then the allocation failed. This is will return segmentation fault because of dereferencing of null pointer and the program crashes. An error message
+            is displayed. The program should be terminated. 
+
+Error 3:    Creating memory leaks in the program.
+Strategy:   We allocate new space each time when we use malloc() function. Therefore, after every time we allocate memory, we use free() function to free up 
+            space which we allocated. This space can be reused for the latter tests. If not freed, this can lead to memory fragmentation and memory leakage.
+            Also, the memory might get full because of allocation of data in each test case. Therefore, freeing up space is important.
+ 
+Error 4:    While allocating memory, we run out of space.
+Strategy:   We can get failure to allocate memory if we are trying to create space while the memory is full. We don't have enough space on the device to execute the program.
+            A null pointer is returned. Therefore, an error message should be displayed and the program must be terminated.
+
+
