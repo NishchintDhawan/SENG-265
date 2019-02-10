@@ -1,0 +1,37 @@
+=======
+Error 1:  If the month given is not in the calender. Use try and except to handle the problem.
+Srategy:  We can use try and except commands to catch this exception. 
+	     If the month entered is not between 1 and 12, then we return an exception saying that the month should be between 1 and 12.
+    	try: 
+    	    string = calendar.month_abbr[index] 
+	    else: 
+	        print("Invalid value for month")
+
+Error 2:   If the margin entered is more than width value entered. 
+Stategy:   When we take the input, we can check if the margin is more than the width or not. 
+	   
+	        try:
+	            if dict['mrgn'] > dict['width']:
+	        except:
+	            print("The margin can't be more than the width")
+
+Error 3:   If the margin entered is not a numeric value.
+Stategy:  We can resolve this by checking if the margin is numeric or not. 
+
+	     x = formatcmd[1][1]             #takes the margin value.
+	     
+	     if x.isnumeric() == False:      #checks if value is numeric or not.
+	        
+	        print("Sorry, the margin should be a numeric value")
+
+	
+Error 4: The input file doesn't exist in the directory.
+Strategy: We can resolve this error by the following approach: 
+	
+	     try:                                           
+    	    for line in formatinput.input():            # take the value of each line in the input.
+	            inputlines.append(line)
+	    except:
+	        print("The file name does not exist")       # if not, then file entered is not in directory.
+	        
+	        
